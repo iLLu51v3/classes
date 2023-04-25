@@ -114,7 +114,7 @@ class Car {
 */
 
 class Lambdasian {
-  constructor(name, age, location){ 
+  constructor({name, age, location}){ 
     this.name = name;
     this.age = age;
     this.location = location;
@@ -123,6 +123,7 @@ class Lambdasian {
     return `Hello my name is ${this.name}, I am from ${this.location}`;
   }
 }
+
 
 /*
   TASK 4
@@ -141,16 +142,16 @@ class Lambdasian {
 
 class Instructor extends Lambdasian {
   constructor({name, age, location, specialty, favLanguage, catchPhrase}){
-    super(name, age, location, specialty, favLanguage, catchPhrase);
+    super({name, age, location, specialty, favLanguage, catchPhrase});
     this.specialty = specialty
     this.favLanguage = favLanguage;
     this.catchPhrase = catchPhrase;
   }
   demo(subject){
-    return `Today we are learning about ${subject}`
+    return `Today we are learning about ${subject}`;
   }
   grade(student, subject){
-    return `${this.name} receives a perfect score on ${subject}`;
+    return`${student.name} recieved a perfect score on ${subject};`
   }
 }
 
@@ -171,7 +172,7 @@ class Instructor extends Lambdasian {
 */
 class Student extends Lambdasian{
    constructor({name, age, location, previousBackground, className, favSubjects}){
-    super(name, age, location, previousBackground, className, favSubjects);
+    super({name, age, location, previousBackground, className, favSubjects});
     this.previousBackground = previousBackground
     this.className = className
     this.favSubjects = favSubjects
@@ -202,20 +203,19 @@ class Student extends Lambdasian{
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 
-class ProjectManager extends Instructor {
+class ProjectManager extends Instructor{
    constructor({name, age, location, specialty, favLanguage, catchPhrase, gradClassName, favInstructor}){
     super({name, age, location, specialty, favLanguage, catchPhrase, gradClassName, favInstructor});
-    this.gradClassName = gradClassName
-    this.favInstructor = favInstructor
+    this.gradClassName = gradClassName;
+    this.favInstructor = favInstructor;
    }
    standUp(channel){
-    return `${this.name} announces to ${channel}, @channel standy times!`
+    return `${this.name} announces to ${channel}, @channel standy times!`;
    }
    debugsCode(student, subject){
-    return `${this.name} debugs ${student.name}'s code on ${subject}`
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
    }
-}
-
+  }
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
@@ -224,7 +224,8 @@ class ProjectManager extends Instructor {
       + This method, when called, will check the grade of the student and see if they're ready to graduate from BloomTech
       + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
-
+// let number = Math.floor(Math.random() * 100)+1;
+// class Instructor
 
 //End of Challenge
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
